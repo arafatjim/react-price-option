@@ -14,7 +14,7 @@ const Navbar = () => {
                   
           return (
 
-                    <nav>
+                    <nav className="bg-green-500 px-4 py-2 text-xl">
                               <div className="md:hidden" onClick={() => setOpen(!open)}>
                                         {
                                            open === true? <AiOutlineClose className="text-3xl "></AiOutlineClose>: 
@@ -22,7 +22,8 @@ const Navbar = () => {
                                         }
                               
                               </div>
-                              <ul className="md:flex">
+                              <ul className={`md:flex duration-1000 absolute md:static  justify-center
+                              ${open ? 'top-16' : '-top-60'} bg-green-500 px-6 py-6 gap-6 text-white font-bold `}>
                               {
                               routes.map(route => <Link key={route.id} route={route}></Link> )
                         } 
